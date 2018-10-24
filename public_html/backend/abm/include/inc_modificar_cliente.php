@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "inc_connectdb.php";
 
 extract($_POST);
@@ -12,5 +12,5 @@ else
 //phpinfo();
 //print $_SERVER['HTTP_HOST'];
 
-header("Location: http://".$_SERVER['HTTP_HOST']."/clientes.php?mensaje=".$mensaje);
+header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/clientes.php?mensaje=".$mensaje);
 ?>

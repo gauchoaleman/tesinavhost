@@ -6,7 +6,7 @@ if( isset($_POST["enviar"])){
 	//echo "en el if";
 	if( $_POST["clave1"]==$_POST["clave2"]){
 		if(cambiarClave($_POST)){
-			header("Location: http://".$_SERVER['HTTP_HOST']."/index.php?mensaje=Cambio de clave exitoso");
+			header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/index.php?mensaje=Cambio de clave exitoso");
 		}
 		else echo "Cambio de clave no exitoso.";
 	}
@@ -26,8 +26,8 @@ if( isset($_POST["enviar"])){
 <div class="row">
 	<div class="col-sm-3">
 <form method="POST" data-toggle="validator">
-	
-	
+
+
 <label for="exampleInputPassword1">Ingrese nueva Clave:</label>
     <input type="password" required name="clave1" class="form-control">
 	</div>
@@ -44,7 +44,7 @@ if( isset($_POST["enviar"])){
 <?php
 function cambiarClave($Data){
 	global $SqlLink;
-			
+
 	extract($Data);
 	print_r($Data);
 	print_r($_SESSION);

@@ -1,7 +1,7 @@
 <?php
 require "include/inc_connectdb.php";
 
-include "include/inc_head.php"; 
+include "include/inc_head.php";
 function borrarRecurso($idRecurso){
 		global $SqlLink;
 		$query = "DELETE FROM recurso WHERE idRecurso=$idRecurso;";
@@ -10,8 +10,8 @@ function borrarRecurso($idRecurso){
 
 
 if( isset($_POST["confirmado"])){
-	borrarRecurso($_GET["idRecurso"]);		
-	header("Location: http://".$_SERVER['HTTP_HOST']."/recursos.php");
+	borrarRecurso($_GET["idRecurso"]);
+	header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/recursos.php");
 }
 
 ?>

@@ -8,9 +8,9 @@ if( isset($_POST["enviar"])){
 	if (tryLogin($_POST)){
 		//echo "Login exitoso";
 		//echo "Location: http://".$_SERVER['HTTP_HOST']."/index.php";
-		
-		
-		header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
+
+
+		header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/index.php");
 	}
 	else $mensaje="Login no exitoso.";
 }
@@ -35,10 +35,10 @@ if( isset($_POST["enviar"])){
     <input type="text" name="nombre" class="form-control">
 	</div>
 	<div class="col-sm-3">
-	
+
 <label for="exampleInputPassword1">Clave</label>
     <input type="password" required name="clave" class="form-control">
-	</div> 
+	</div>
 	</div>
 <button type="submit" class="btn btn-primary" name="enviar" value="login">Enviar</button>
 </div>
@@ -48,7 +48,7 @@ if( isset($_POST["enviar"])){
 <?php
 function tryLogin($Data){
 	global $SqlLink;
-	
+
 	extract($Data);
 	//print_r($Data);
 	$query = "SELECT idUsuario FROM usuario WHERE nombre='$nombre' AND clave='$clave';";

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "inc_connectdb.php";
 
 $recursos = array();
@@ -28,7 +28,7 @@ else
 //phpinfo();
 //print $_SERVER['HTTP_HOST'];
 
-header("Location: http://".$_SERVER['HTTP_HOST']."/alquileres.php?mensaje=".$mensaje);
+header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/alquileres.php?mensaje=".$mensaje);
 
 function borrarRecursosAlquiler($idAlquiler){
 	global $SqlLink;
@@ -54,9 +54,9 @@ function obtenerPrecioTotal($recursos,$fechaInicio,$fechaFin){
 	//echo "FEchaHOra: $anioI-$mesI-$diaI $horaI:$minutoI";
 	$fechaInicioFormateada = new DateTime("$anioI-$mesI-$diaI $horaI:$minutoI");
 	$fechaFinFormateada = new DateTime("$anioF-$mesF-$diaF $horaF:$minutoF");
-    $interval = $fechaFinFormateada->diff($fechaInicioFormateada);    
+    $interval = $fechaFinFormateada->diff($fechaInicioFormateada);
     //echo $interval->format("diffff: %H");
-	
+
 	$diff = abs(strtotime("$anioF-$mesF-$diaF $horaF:$minutoF") - strtotime("$anioI-$mesI-$diaI $horaI:$minutoI"));
 	//echo "strtotime method: $diff";
 	$diffHoras = $diff/(60*60);
