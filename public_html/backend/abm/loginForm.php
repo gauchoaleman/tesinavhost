@@ -23,11 +23,11 @@ if( isset($_POST["enviar"])){
 <body>
 
 <div class="container">
-<h3 class="text-muted">Alquiler CAPACITAS - Login</h3>
+<h3 class="text-muted">ABM SEA - Login</h3>
 <?if( isset($mensaje))
 	echo $mensaje;?>
-<div class="row">
-    <div class="col-sm-3">
+<div class="row" >
+    <div class="col-sm-3" >
 <form method="POST" data-toggle="validator">
 <label required for="exampleInputPassword1">Nombre de usuario</label>
     <input type="text" name="nombre" class="form-control" value="nombre">

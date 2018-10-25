@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php include "include/inc_head.php"; 
+    <?php include "include/inc_head.php";
 	function borrarCliente($idCliente)
 	  {
 		  global $SqlLink;
@@ -14,9 +14,9 @@
 
     <div class="container">
 
-      <?php include "include/inc_menu.php"; 
+      <?php include "include/inc_menu.php";
 	  if( isset($_GET["mensaje"]) ) echo $_GET["mensaje"];
-	  
+
 	  if( isset($_GET["accion"]))
 	  {
 	  switch( $_GET["accion"]){
@@ -40,8 +40,8 @@
 	  {
 		  include "include/inc_listadoClientes.php";
 	  }
-	  
-	  
+
+
 	  ?>
       <!-- Site footer -->
       <footer class="footer">
@@ -51,6 +51,6 @@
     </div> <!-- /container -->
 
 
-   
+
   </body>
 </html>
