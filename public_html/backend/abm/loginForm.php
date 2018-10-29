@@ -49,13 +49,13 @@ function tryLogin($Data){
 
 	extract($Data);
 	//print_r($Data);
-	$query = "SELECT Administradores_id FROM Administradores WHERE Nombre='$nombre' AND Clave='$clave';";
+	$query = "SELECT Administradores_Id FROM Administradores WHERE Nombre='$nombre' AND Clave='$clave';";
 
 	$resultObject = mysqli_query($SqlLink,$query);
 	$obj = $resultObject->fetch_object();
 	if( $resultObject->num_rows >0){
 		session_start();
-		$_SESSION["loginId"] = $obj->Administradores_id;
+		$_SESSION["loginId"] = $obj->Administradores_Id;
 		return true;
 	}
 	else

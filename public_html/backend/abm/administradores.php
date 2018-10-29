@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php include "include/inc_head.php";
-	function borrarAdministrador($Administradores_id)
+<?php include "include/inc_head.php";
+
+	function borrarAdministrador($Administradores_Id)
 	  {
 		  global $SqlLink;
-		  $query = "DELETE FROM Administradores WHERE Administradores_id=$Administradores_id;";
+      $query = "SELECT Eventos_Id FROM Eventos WHERE Administradores_Id=$Administradores_Id;";
+      $ResultObject=mysqli_query($SqlLink,$query);
+
+      while ($obj = $ResultObject->fetch_object())
+  		{
+          $query = "DELETE FROM Entradas WHERE Eventos_Id=$obj->Eventos_Id";
+          mysqli_query($SqlLink,$query);
+      }
+      $query = "DELETE FROM Eventos WHERE Administradores_Id=$Administradores_Id;";
+      mysqli_query($SqlLink,$query);
+      $query = "DELETE FROM Administradores WHERE Administradores_Id=$Administradores_Id;";
 		  mysqli_query($SqlLink,$query);
 	  }?>
   </head>
@@ -21,13 +32,13 @@
 	  {
 	  switch( $_GET["accion"]){
 		case "agregarAdministrador":
-			include "include/inc_formularioAdministrador.php";
+			include "include/inc_formularioAgregarAdministrador.php";
 			break;
 		case "modificarAdministrador":
 			include "include/inc_formularioModificarAdministrador.php";
 			break;
-		case "borrarCliente":
-			borrarCliente($_GET["Administradores_id"]);
+		case "borrarAdministrador":
+			borrarAdministrador($_GET["Administradores_Id"]);
 			include "include/inc_listadoAdministradores.php";
 			break;
 		case "listadoClientes":

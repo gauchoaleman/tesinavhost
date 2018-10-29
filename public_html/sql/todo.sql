@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `script_tesina`.`Eventos` (
   `Administradores_Id` INT NOT NULL,
   `Salas_Id` INT NOT NULL,
   PRIMARY KEY (`Eventos_Id`),
-  INDEX `fk_Eventos_Administradores_idx` (`Administradores_Id` ASC),
+  INDEX `fk_Eventos_Administradores_Idx` (`Administradores_Id` ASC),
   INDEX `fk_Eventos_Salas1_idx` (`Salas_Id` ASC),
   CONSTRAINT `fk_Eventos_Administradores`
     FOREIGN KEY (`Administradores_Id`)
@@ -158,4 +158,3 @@ INSERT INTO `script_tesina`.`Eventos` (`Eventos_Id`, `Nombre`, `Descripcion`, `C
 INSERT INTO `script_tesina`.`Eventos` (`Eventos_Id`, `Nombre`, `Descripcion`, `Costo`, `Fecha`, `Hora`, `Administradores_Id`, `Salas_Id`) VALUES (2, 'Catupecu Machu', 'Recital de la banda mas loca del mundo, con toda la potencia y garra', 500, '25/11/2018', '23:30', 2, DEFAULT);
 
 COMMIT;
-

@@ -1,4 +1,4 @@
-<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/administradores.php?accion=agregarAdministrador">+</a></h5>
+<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/administradores.php?accion=agregarAdministrador">+</a></h5>
 <?
 $query = "SELECT * FROM Administradores ";
 if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
@@ -84,7 +84,7 @@ if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
 </div>
 <div class="col-sm-1" align="center">
 
-<a onclick="return confirm('Seguro que quiere borrar el cliente?')" href="administradores.php?accion=borrarAdministrador&Administradores_id=<?echo $obj->Administradores_id;?>">B</a>
+<a onclick="return confirm('Seguro que quiere borrar el cliente?')" href="administradores.php?accion=borrarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>">B</a>
 <a href="administradores.php?accion=modificarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>">M</a>
 
 
