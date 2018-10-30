@@ -1,10 +1,10 @@
-<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/administradores.php?accion=agregarAdministrador">+</a></h5>
+<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/contactos.php?accion=agregarContacto">+</a></h5>
 <?
-$query = "SELECT * FROM Administradores ";
+$query = "SELECT * FROM Contactos ";
 if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
 	$query .= " WHERE (nombre LIKE '%$buscar%' OR apellido LIKE '%$buscar%' OR email LIKE '%$buscar%');";
 	$ResultObject = mysqli_query($SqlLink,$query);
-	//echo $query;
+
 	$ResultArray = array();
 	if (!$ResultObject)
 		trigger_error("SQL Query failed: ".mysqli_error($SqlLink),E_USER_ERROR);
@@ -60,7 +60,7 @@ if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
 
 	<div class="col-sm-1" align="center">
 
-    <?php echo $obj->Administradores_Id; ?>
+    <?php echo $obj->Contactos_Id; ?>
 
 
     </div>
@@ -84,8 +84,8 @@ if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
 </div>
 <div class="col-sm-1" align="center">
 
-<a onclick="return confirm('Seguro que quiere borrar el administrador?')" href="administradores.php?accion=borrarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>">B</a>
-<a href="administradores.php?accion=modificarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>">M</a>
+<a onclick="return confirm('Seguro que quiere borrar el contacto?')" href="contactos.php?accion=borrarContacto&Contactos_Id=<?echo $obj->Contactos_Id;?>">B</a>
+<a href="contactos.php?accion=modificarContacto&Contactos_Id=<?echo $obj->Contactos_Id;?>">M</a>
 
 
 </div>
