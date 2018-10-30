@@ -1,4 +1,6 @@
 	 <!-- Formulario -->
+
+
 	 <div>
 	 Los campos marcados con * son obligatorios
 
@@ -28,7 +30,7 @@
 		<input type="text" name="Telefono" required class="form-control" >
 		</div>
 	</div>
-</div>
+</div> 
 	<div class="row">
 	<div class="col-sm-4">
 		<div class="form-group">
@@ -36,11 +38,11 @@
 	<input type="password" name="Clave1" required class="form-control" >
 	</div>
 </div>
-	<div class="col-sm-4">
+	<!-- <div class="col-sm-4">
 		<div class="form-group">
 	<label for="exampleInputPassword1">Reingrese clave (*)</label>
 	<input type="password" name="Clave2" required class="form-control" >
-	</div>
+	</div>-->
 </div>
 </div>
   <button type="submit" class="btn btn-primary">Enviar</button>

@@ -23,6 +23,9 @@ if (!isset($_SESSION["loginId"]))
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script type="/text/javascript" src="js/jquery-3.1.1.js" charset="UTF-8"></script>
 
+    <script type="/text/javascript" src="js/passwordcoincidentcheck.js" charset="UTF-8"></script>
+
+
     <!-- Para el Menú - Custom styles for this template -->
     <link href="css/justified-nav.css" rel="stylesheet">
 

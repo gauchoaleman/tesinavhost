@@ -1,7 +1,8 @@
 -- -----------------------------------------------------
 -- Data for table `script_tesina`.`Administradores`
 -- -----------------------------------------------------
-START TRANSACTION;
+START TRANSACTION; 
+
 USE `script_tesina`;
 INSERT INTO `script_tesina`.`Administradores` (`Administradores_Id`, `Nombre`, `Apellido`, `Clave`, `Email`, `Telefono`) VALUES (1, 'Juan', 'Gómez', '1234', 'juangomez@gmail.com', '02944 123455');
 INSERT INTO `script_tesina`.`Administradores` (`Administradores_Id`, `Nombre`, `Apellido`, `Clave`, `Email`, `Telefono`) VALUES (2, 'Julian', 'Fernández', '4321', 'julian@gmail.com', '02944 345643');
