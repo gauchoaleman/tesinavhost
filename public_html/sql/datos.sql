@@ -1,3 +1,4 @@
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
@@ -18,9 +19,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `script_tesina`;
-INSERT INTO `script_tesina`.`Contactos` (`Contactos_Id`, `Nombre`, `Apellido`, `Email`, `Telefono`) VALUES (1, 'Pablo', 'Vázquez', 'pablo@gmail.com', '02944 343434');
-INSERT INTO `script_tesina`.`Contactos` (`Contactos_Id`, `Nombre`, `Apellido`, `Email`, `Telefono`) VALUES (2, 'Fernando', 'Patirri', 'fernando@yahoo.com', '02333 676767');
-INSERT INTO `script_tesina`.`Contactos` (`Contactos_Id`, `Nombre`, `Apellido`, `Email`, `Telefono`) VALUES (3, 'Julian', 'Gómez', 'juli@mail.com', '02944 3455787');
+INSERT INTO `script_tesina`.`Contactos` (`Contactos_Id`, `Nombre`, `Apellido`, `Email`, `Telefono`, `Clave`) VALUES (1, 'Pablo', 'Vázquez', 'pablo@gmail.com', '02944 343434', 1234);
+INSERT INTO `script_tesina`.`Contactos` (`Contactos_Id`, `Nombre`, `Apellido`, `Email`, `Telefono`, `Clave`) VALUES (2, 'Fernando', 'Patirri', 'fernando@yahoo.com', '02333 676767', 4321);
+INSERT INTO `script_tesina`.`Contactos` (`Contactos_Id`, `Nombre`, `Apellido`, `Email`, `Telefono`, `Clave`) VALUES (3, 'Julian', 'Gómez', 'juli@mail.com', '02944 3455787', 'abcd');
 
 COMMIT;
 
@@ -41,8 +42,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `script_tesina`;
-INSERT INTO `script_tesina`.`Eventos` (`Eventos_Id`, `Nombre`, `Descripcion`, `Costo`, `Fecha`, `Hora`, `Administradores_Id`, `Salas_Id`) VALUES (1, 'Almafuerte', 'Recital de Almafuerte, con sus éxitos de ahora y siempre.  Metal puro y nacional.', 450, '2018-12-22', '23:00', 1,1);
-INSERT INTO `script_tesina`.`Eventos` (`Eventos_Id`, `Nombre`, `Descripcion`, `Costo`, `Fecha`, `Hora`, `Administradores_Id`, `Salas_Id`) VALUES (2, 'Catupecu Machu', 'Recital de la banda mas loca del mundo, con toda la potencia y garra', 500, '2018-25-12', '23:30', 2,2);
+INSERT INTO `script_tesina`.`Eventos` (`Eventos_Id`, `Nombre`, `Descripcion`, `Costo`, `Fecha`, `Hora`, `Administradores_Id`, `Salas_Id`) VALUES (1, 'Almafuerte', 'Recital de Almafuerte, con sus éxitos de ahora y siempre.  Metal puro y nacional.', 450, '2018-12-25', '23:00', 1, 1);
+INSERT INTO `script_tesina`.`Eventos` (`Eventos_Id`, `Nombre`, `Descripcion`, `Costo`, `Fecha`, `Hora`, `Administradores_Id`, `Salas_Id`) VALUES (2, 'Catupecu Machu', 'Recital de la banda mas loca del mundo, con toda la potencia y garra', 500, '2018-12-30', '23:30', 2, 2);
 
 COMMIT;
-
