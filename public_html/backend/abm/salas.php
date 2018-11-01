@@ -17,7 +17,7 @@
 			include "include/inc_formularioAgregarSala.php";
 			break;
 		case "borrarSala":
-			borrarSala($_GET["idAlquiler"]);
+			borrarSala($_GET["Salas_Id"]);
 			include "include/inc_listadoSalas.php";
 			break;
 		case "modificarSala":

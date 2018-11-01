@@ -10,5 +10,5 @@ if( $SqlLink->query($query))
 else
 	$mensaje="La inserción fracasó";
 
-header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/contactos.php?mensaje=".$mensaje);
+header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/salas.php?mensaje=".$mensaje);
 ?>

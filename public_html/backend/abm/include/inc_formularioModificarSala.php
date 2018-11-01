@@ -1,37 +1,36 @@
 <?php
 
-$query = "SELECT * FROM Contactos WHERE Contactos_Id=".$_GET['Contactos_Id'];
-
+$query = "SELECT * FROM Salas WHERE Salas_Id=".$_GET['Salas_Id'];
 $resultObjectDatosCliente=$SqlLink->query($query);
 $datosObj = $resultObjectDatosCliente->fetch_object();
 ?>
 	 <!-- Formulario -->
 	 <div>
-	 Los campos marcados con * son obligatorios
+	 Todos los campos son obligatorios<br>
 
-	 	 <form name="form" method="POST" data-toggle="validator" action="include/inc_Contacto.php">
+	 	 <form name="form" method="POST" data-toggle="validator" action="include/inc_modificar_sala.php">
 	 	<div class="row">
 	  <div class="col-sm-3">
 	 	 <div class="form-group">
-	  <label for="exampleInputPassword1">Descripción (*)</label>
+	  <label for="exampleInputPassword1">Descripción </label>
 	  <input type="text" name="Descripcion" value="<? echo $datosObj->Descripcion;?>" required  class="form-control">
 	 </div>
 	  </div>
 	  <div class="col-sm-3">
 	 	<div class="form-group">
-	  <label for="exampleInputPassword1">Capacidad (*)</label>
+	  <label for="exampleInputPassword1">Capacidad </label>
 	  <input type="text" name="Capacidad" value="<? echo $datosObj->Capacidad;?>" required class="form-control">
 	 </div>
 	  </div>
 	  <div class="col-sm-3">
 	 	 <div class="form-group">
-	  <label for="exampleInputPassword1">Provincia (*)</label>
+	  <label for="exampleInputPassword1">Provincia </label>
 	  <input name="Provincia" required type="text" value="<? echo $datosObj->Provincia;?>" class="form-control">
 	 </div>
 	  </div>
 	  <div class="col-sm-3">
 	 	 <div class="form-group">
-	  <label for="exampleInputPassword1">CP (*)</label>
+	  <label for="exampleInputPassword1">CP </label>
 	  <input type="text" name="CP" required value="<? echo $datosObj->CP;?>" class="form-control" >
 	  </div>
 	 </div>
@@ -39,15 +38,15 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 	 <div class="row">
 	 <div class="col-sm-4">
 	  <div class="form-group">
-	 <label for="exampleInputPassword1">Ciudad (*)</label>
+	 <label for="exampleInputPassword1">Ciudad </label>
 	 <input type="text" name="Ciudad" required value="<? echo $datosObj->Ciudad;?>" class="form-control" >
 	 </div>
 	 <div class="form-group">
-	 <label for="exampleInputPassword1">Calle (*)</label>
+	 <label for="exampleInputPassword1">Calle </label>
 	 <input type="text" name="Calle" required class="form-control" value="<? echo $datosObj->Calle;?>">
 	 </div>
 	 <div class="form-group">
-	 <label for="exampleInputPassword1">Altura calle (*)</label>
+	 <label for="exampleInputPassword1">Altura calle </label>
 	 <input type="text" name="AlturaCalle" required value="<? echo $datosObj->AlturaCalle;?>" class="form-control" >
 	 </div>
 	 <div class="form-group">
@@ -61,6 +60,7 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 	 </div>-->
 	 </div>
 	 </div>
+	 <input type="hidden" name="Salas_Id" value="<? echo $datosObj->Salas_Id;?>">
 	 <button type="submit" class="btn btn-primary">Enviar</button>
 	 </form>
 	 </div>

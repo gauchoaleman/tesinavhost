@@ -11,6 +11,7 @@ else
 	$mensaje="La modificación fracasó";
 //phpinfo();
 //print $_SERVER['HTTP_HOST'];
-
+echo $query;
+exit();
 header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/salas.php?mensaje=".$mensaje);
 ?>

@@ -1,7 +1,7 @@
 <br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/salas.php?accion=agregarSala">+</a></h4>
 <?
 //Hacer 2 queries: uno este, otro que joinea idtiporecurso, recurso y cliente y alquiler para mostrar los recursos que coinciden.
-$query="SELECT * FROM Salas ";
+$query="SELECT * FROM Salas S ";
 //echo $query;
 
 if( isset($_GET["buscar"])){
@@ -123,7 +123,7 @@ Contacto
 		<?php echo $obj->AlturaCalle; ?>
 </div>
 <div class="col-sm-1" align="center">
-	<a href="contactos.php?accion=listadoContactos&Contactos_Id=<?php echo $obj->Contactos_Id; ?>">X</a>
+	<a href="contactos.php?accion=listadoContactos&Contactos_Id=<?php echo $obj->Contactos_Id; ?>">Click</a>
 </div>
 <div class="col-sm-1" align="center">
 
