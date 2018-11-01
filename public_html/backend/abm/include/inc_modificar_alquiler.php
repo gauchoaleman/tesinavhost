@@ -24,10 +24,6 @@ if( $result )
 else
 	$mensaje="La modificación fracasó";
 
-
-//phpinfo();
-//print $_SERVER['HTTP_HOST'];
-
 header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/alquileres.php?mensaje=".$mensaje);
 
 function borrarRecursosAlquiler($idAlquiler){
