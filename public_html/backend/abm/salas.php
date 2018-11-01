@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">    
+<html lang="es">
 <?php include "include/inc_head.php";?>
 
   <body>
 
     <div class="container">
 
-<?php include "include/inc_menu.php"; 
-	  
+<?php include "include/inc_menu.php";
+
 	  if( isset($_GET["mensaje"]) ) echo $_GET["mensaje"];
-	  
+
 	  if( isset($_GET["accion"]))
 	  {
 	  switch( $_GET["accion"]){
@@ -45,14 +45,12 @@
 
     </div> <!-- /container -->
 
-	
+
   </body>
 </html>
-<?php 
+<?php
 function borrarSala($Salas_Id){
 	 global $SqlLink;
 	 $query = "DELETE FROM Salas WHERE Salas_Id=$Salas_Id;";
-	 mysqli_query($SqlLink,$query);
-	 $query = "DELETE FROM recursoalquiler WHERE idAlquiler=$idAlquiler;";
 	 mysqli_query($SqlLink,$query);
 }?>

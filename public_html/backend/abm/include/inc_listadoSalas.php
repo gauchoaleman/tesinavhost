@@ -1,71 +1,80 @@
-<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/alquileres.php?accion=agregarAlquiler">+</a></h4>
+<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/salas.php?accion=agregarSala">+</a></h4>
 <?
 //Hacer 2 queries: uno este, otro que joinea idtiporecurso, recurso y cliente y alquiler para mostrar los recursos que coinciden.
-$query="SELECT * FROM Salas, Contactos  WHERE Salas.Contactos_Id=Contactos.Contactos_Id ";
-
-echo $query;
+$query="SELECT * FROM Salas ";
+//echo $query;
 
 if( isset($_GET["buscar"])){
 	$buscar = $_GET["buscar"];
-	$query .= "AND (S.Descripcion  LIKE '%$buscar%' OR S.Provincia LIKE '%$buscar%' OR S.Ciudad LIKE '%$buscar%' OR S.Calle LIKE '%$buscar%' OR S.Ciudad LIKE '%$buscar%');";
+	$query .= "WHERE (S.Descripcion  LIKE '%$buscar%' OR S.Provincia LIKE '%$buscar%' OR S.Ciudad LIKE '%$buscar%' OR S.Calle LIKE '%$buscar%' OR S.Ciudad LIKE '%$buscar%');";
 }
 
 $ResultObject = mysqli_query($SqlLink,$query);
-		
-	
-	$ResultArray = array();
-	if (!$ResultObject) 
+
+$ResultArray = array();
+	if (!$ResultObject)
 		trigger_error("SQL Query failed: ".mysqli_error($SqlLink),E_USER_ERROR);
 	else if($ResultObject->num_rows >0)
 	{
 ?>
- 
+
 <div class="row">
-    <div class="col-sm-1" align="center" >
 
-    &nbsp;
-
-    </div>
     <div class="col-sm-1" align="center" >
 <h5>
     Id
-</h5>    
+</h5>
     </div>
     <div class="col-sm-1" align="center">
-     
-  <h5>  
-    Cliente
+
+  <h5>
+    Descripción
 	</h5>
     </div>
-	<div class="col-sm-2" align="center">
-     
+	<div class="col-sm-1" align="center">
+
     <h5>
-    Fecha inicio
+    Capacidad
 	</h5>
 
     </div>
-	<div class="col-sm-2" align="center">
+	<div class="col-sm-1" align="center">
      <h5>
-    Fecha fin
+    Provincia
 	</h5>
 
     </div>
-	<div class="col-sm-2" align="center">
+	<div class="col-sm-1" align="center">
     <h5>
-	Obs.
+	CP
 	</h5>
 </div>
 	<div class="col-sm-2" align="center">
-      <h5>  
-    Recursos
+      <h5>
+    Ciudad
 	</h5>
   </div>
-	
-    <div class="col-sm-1" align="center">
-      <h5>  
-    Total
+
+    <div class="col-sm-2" align="center">
+      <h5>
+    Calle
 	</h5>
-  </div> 
+  </div>
+	<div class="col-sm-1" align="center">
+		<h5>
+	Altura Calle
+</h5>
+</div>
+<div class="col-sm-1" align="center">
+	<h5>
+Contacto
+</h5>
+</div>
+<div class="col-sm-1" align="center" >
+
+&nbsp;
+
+</div>
 </div>
 
 
@@ -73,63 +82,66 @@ $ResultObject = mysqli_query($SqlLink,$query);
 		while ($obj = $ResultObject->fetch_object())
 		{
     ?>
-	 
+
 	   <div class="row">
+
+	<div class="col-sm-1" align="center">
+
+    <?php echo $obj->Salas_Id; ?>
+
+
+    </div>
+	<div class="col-sm-1" align="center">
+
+    <?php echo $obj->Descripcion; ?>
+
+
+    </div>
     <div class="col-sm-1" align="center">
 
-    <a onclick="return confirm('Seguro que quiere borrar el alquiler?')" href="alquileres.php?accion=borrarAlquiler&idAlquiler=<?echo $obj->idAlquiler;?>">B</a>
-	<a href="alquileres.php?accion=modificarAlquiler&idAlquiler=<?echo $obj->idAlquiler;?>">M</a>
-    
-		
+    <?php echo $obj->Capacidad; ?>
     </div>
 	<div class="col-sm-1" align="center">
 
-    <?php echo $obj->idAlquiler; ?>
-    
-		
+    <?php echo $obj->Provincia; ?>
+
     </div>
 	<div class="col-sm-1" align="center">
 
-    <?php echo $obj->nombre." ".$obj->apellido; ?>
-    
-		
+    <?php echo $obj->CP; ?>
+
+    </div>
+	<div class="col-sm-2" align="center">
+
+    <?php echo $obj->Ciudad; ?>
+
     </div>
     <div class="col-sm-2" align="center">
-     
-    <?php 
-	$FechaInicioDate = new DateTime($obj->fechaInicio);
-	echo date_format($FechaInicioDate, 'd/m/Y h:m');?>
-    </div>
-	<div class="col-sm-2" align="center">
-     
-    <?php 
-	$FechaFinDate = new DateTime($obj->fechaFin);
-	echo date_format($FechaFinDate, 'd/m/Y h:m');?>
+      <?php echo $obj->Calle; ?>
+  </div>
+	<div class="col-sm-1" align="center">
+		<?php echo $obj->AlturaCalle; ?>
+</div>
+<div class="col-sm-1" align="center">
+	<a href="contactos.php?accion=listadoContactos&Contactos_Id=<?php echo $obj->Contactos_Id; ?>">X</a>
+</div>
+<div class="col-sm-1" align="center">
 
-    </div>
-	<div class="col-sm-2" align="center">
-     
-    <?php echo $obj->observaciones; ?>
+<a onclick="return confirm('Seguro que quiere borrar el alquiler?')" href="salas.php?accion=borrarSala&Salas_Id=<?echo $obj->Salas_Id;?>">B</a>
+<a href="salas.php?accion=modificarSala&Salas_Id=<?echo $obj->Salas_Id;?>">M</a>
 
-    </div>
-	<div class="col-sm-2" align="center">
-     
-    <?php mostrarRecursos($obj->idAlquiler); ?>
 
-    </div>
-    <div class="col-sm-1" align="center">
-      $ <?php echo $obj->precioTotal; ?>
-  </div> 
-    
-   
-    
+</div>
+
+
+
   </div>
 	<? }
 	}
 	 /* liberar el conjunto de resultados */
    	$ResultObject->close();
 
-	
+
 	function mostrarRecursos($idAlquiler)
 	{
 		$ret="";

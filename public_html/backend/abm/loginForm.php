@@ -30,7 +30,7 @@ if( isset($_POST["enviar"])){
     <div class="col-sm-3" >
 <form method="POST" data-toggle="validator">
 <label required for="exampleInputPassword1">Nombre de usuario</label>
-    <input type="text" name="nombre" class="form-control" value="nombre">
+    <input type="text" name="nombre" class="form-control" value="">
 	</div>
 	<div class="col-sm-3">
 

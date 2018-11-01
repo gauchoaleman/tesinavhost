@@ -2,9 +2,11 @@
 <?
 $query = "SELECT * FROM Contactos ";
 if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
-	$query .= " WHERE (nombre LIKE '%$buscar%' OR apellido LIKE '%$buscar%' OR email LIKE '%$buscar%');";
+	$query .= " WHERE (nombre LIKE '%$buscar%' OR apellido LIKE '%$buscar%' OR email LIKE '%$buscar%') ";
+else if( isset($_GET["Contactos_Id"]))
+		$query .= " WHERE Contactos_Id = ".$_GET["Contactos_Id"].";";
 	$ResultObject = mysqli_query($SqlLink,$query);
-
+	echo $query;
 	$ResultArray = array();
 	if (!$ResultObject)
 		trigger_error("SQL Query failed: ".mysqli_error($SqlLink),E_USER_ERROR);
