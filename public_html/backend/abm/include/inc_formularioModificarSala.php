@@ -40,18 +40,31 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 	  <div class="form-group">
 	 <label for="exampleInputPassword1">Ciudad </label>
 	 <input type="text" name="Ciudad" required value="<? echo $datosObj->Ciudad;?>" class="form-control" >
-	 </div>
+ </div></div>
+	 <div class="col-sm-4">
 	 <div class="form-group">
 	 <label for="exampleInputPassword1">Calle </label>
 	 <input type="text" name="Calle" required class="form-control" value="<? echo $datosObj->Calle;?>">
-	 </div>
+	 </div></div>
+	 <div class="col-sm-4">
 	 <div class="form-group">
 	 <label for="exampleInputPassword1">Altura calle </label>
 	 <input type="text" name="AlturaCalle" required value="<? echo $datosObj->AlturaCalle;?>" class="form-control" >
-	 </div>
+	 </div></div>
+	 <div class="col-sm-4">
 	 <div class="form-group">
 	 <? include "include/inc_selectorContactos.php";?>
-	 </div>
+ </div></div></div>
+ <div class="row">
+ <div class="col-sm-4">
+	<div class="form-group">
+
+
+ <button type="submit" class="btn btn-primary">Enviar</button>
+</div></div>
+
+
+
 	 </div>
 	 <!-- <div class="col-sm-4">
 	  <div class="form-group">
@@ -61,7 +74,7 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 	 </div>
 	 </div>
 	 <input type="hidden" name="Salas_Id" value="<? echo $datosObj->Salas_Id;?>">
-	 <button type="submit" class="btn btn-primary">Enviar</button>
+
 	 </form>
 	 </div>
 	 </div>

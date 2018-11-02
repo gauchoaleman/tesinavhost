@@ -2,7 +2,7 @@
 
 
 	 <div>
-	 Los campos marcados con * son obligatorios
+	 Todos los campos son obligatorios
 
       <form name="form" method="POST" data-toggle="validator" action="include/inc_Sala.php">
 	   <div class="row">
@@ -61,8 +61,15 @@
 	<input type="password" name="Clave2" required class="form-control" >
 	</div>-->
 </div>
-</div>
+<div class="row">
+<div class="col-sm-3">
+	<div class="form-group">
   <button type="submit" class="btn btn-primary">Enviar</button>
+</div>
+
+
+</div>
+
 </form>
 </div>
 </div>
