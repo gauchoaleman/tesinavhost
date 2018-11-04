@@ -8,6 +8,8 @@ if( isset($_GET["buscar"])){
 	$buscar = $_GET["buscar"];
 	$query .= "WHERE (S.Descripcion  LIKE '%$buscar%' OR S.Provincia LIKE '%$buscar%' OR S.Ciudad LIKE '%$buscar%' OR S.Calle LIKE '%$buscar%' OR S.Ciudad LIKE '%$buscar%');";
 }
+else if( isset($_GET["Salas_Id"]) &&  $_GET["accion"] != "borrarSala")
+		$query .= " WHERE Salas_Id = ".$_GET["Salas_Id"].";";
 
 $ResultObject = mysqli_query($SqlLink,$query);
 

@@ -3,6 +3,8 @@
 $query = "SELECT * FROM Administradores ";
 if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
 	$query .= " WHERE (nombre LIKE '%$buscar%' OR apellido LIKE '%$buscar%' OR email LIKE '%$buscar%');";
+else if( isset($_GET["Administradores_Id"]) &&  $_GET["accion"] != "borrarAdministrador")
+			$query .= " WHERE Administradores_Id = ".$_GET["Administradores_Id"].";";
 	$ResultObject = mysqli_query($SqlLink,$query);
 	//echo $query;
 	$ResultArray = array();
