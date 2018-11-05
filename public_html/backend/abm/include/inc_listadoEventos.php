@@ -1,4 +1,4 @@
-<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/eventos.php?accion=agregarSala">+</a></h4>
+<br><form method="GET">Buscar:<input type="text" name="buscar"><input type="submit"></form><h1 align="right"><a href="/backend/abm/eventos.php?accion=agregarEvento">+</a></h4>
 <?
 //Hacer 2 queries: uno este, otro que joinea idtiporecurso, recurso y cliente y alquiler para mostrar los recursos que coinciden.
 $query="SELECT * FROM Eventos E ";
@@ -8,7 +8,8 @@ if( isset($_GET["buscar"])){
 	$buscar = $_GET["buscar"];
 	$query .= "WHERE (E.Nombre LIKE '%$buscar%' OR E.Descripcion  LIKE '%$buscar%' );";
 }
-
+else if( isset($_GET["Eventos_Id"]) &&  $_GET["accion"] != "borrarEvento")
+		$query .= " WHERE Eventos_Id = ".$_GET["Eventos_Id"].";";
 $ResultObject = mysqli_query($SqlLink,$query);
 
 $ResultArray = array();
@@ -25,7 +26,7 @@ $ResultArray = array();
     Id
 </h5>
     </div>
-    <div class="col-sm-2" align="center">
+    <div class="col-sm-1" align="center">
 
   <h5>
     Nombre
@@ -65,6 +66,11 @@ $ResultArray = array();
     Sala
 	</h5>
   </div>
+	<div class="col-sm-1" align="center">
+		<h5>
+	Entradas
+</h5>
+</div>
 
 <div class="col-sm-1" align="center" >
 
@@ -87,7 +93,7 @@ $ResultArray = array();
 
 
     </div>
-	<div class="col-sm-2" align="center">
+	<div class="col-sm-1" align="center">
 
     <?php echo $obj->Nombre; ?>
 
@@ -123,6 +129,10 @@ $ResultArray = array();
 		</div>
 		<div class="col-sm-1" align="center">
 			<a href="salas.php?accion=listadoSalas&Salas_Id=<?php echo $obj->Salas_Id; ?>">Click</a>
+		</div>
+
+		<div class="col-sm-1" align="center">
+			<a href="/backend/entradas/entradas.php?accion=listadoEntradas&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Click</a>
 		</div>
 
 <div class="col-sm-1" align="center">

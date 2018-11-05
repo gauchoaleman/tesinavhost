@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include "include/inc_head.php";?>
+<?php include "include/inc_head.php";
+function twoyears()
+{
+	return date('Y',time())+2;
+}
+?>
 
   <body>
 

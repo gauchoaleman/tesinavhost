@@ -1,8 +1,4 @@
 <?php
-function twoyears()
-{
-	return date('Y',time())+2;
-}
 $query = "SELECT * FROM Eventos WHERE Eventos_Id=".$_GET['Eventos_Id'];
 $resultObjectDatosCliente=$SqlLink->query($query);
 $datosObj = $resultObjectDatosCliente->fetch_object();
