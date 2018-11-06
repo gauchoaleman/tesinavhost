@@ -80,7 +80,7 @@ $ResultArray = array();
 </form>
     </div>
 		<div class="col-sm-1" align="center">
-			<a href="/backend/abm/eventos.php?accion=listadoEventos&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Click</a>
+			<a href="/backend/abm/eventos.php?accion=listadoEventos&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Ver</a>
 		</div>
 </div>
 	<? }

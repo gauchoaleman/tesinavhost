@@ -125,14 +125,14 @@ $ResultArray = array();
 		?>
     </div>
 		<div class="col-sm-1" align="center">
-			<a href="administradores.php?accion=listadoAdministradores&Administradores_Id=<?php echo $obj->Administradores_Id; ?>">Click</a>
+			<a href="administradores.php?accion=listadoAdministradores&Administradores_Id=<?php echo $obj->Administradores_Id; ?>">Ver</a>
 		</div>
 		<div class="col-sm-1" align="center">
-			<a href="salas.php?accion=listadoSalas&Salas_Id=<?php echo $obj->Salas_Id; ?>">Click</a>
+			<a href="salas.php?accion=listadoSalas&Salas_Id=<?php echo $obj->Salas_Id; ?>">Ver</a>
 		</div>
 
 		<div class="col-sm-1" align="center">
-			<a href="/backend/entradas/entradas.php?accion=listadoEntradas&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Click</a>
+			<a href="/backend/entradas/entradas.php?accion=listadoEntradas&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Ver</a>
 		</div>
 
 <div class="col-sm-1" align="center">

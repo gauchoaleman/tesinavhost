@@ -125,7 +125,7 @@ Contacto
 		<?php echo $obj->AlturaCalle; ?>
 </div>
 <div class="col-sm-1" align="center">
-	<a href="contactos.php?accion=listadoContactos&Contactos_Id=<?php echo $obj->Contactos_Id; ?>">Click</a>
+	<a href="contactos.php?accion=listadoContactos&Contactos_Id=<?php echo $obj->Contactos_Id; ?>">Ver</a>
 </div>
 <div class="col-sm-1" align="center">
 

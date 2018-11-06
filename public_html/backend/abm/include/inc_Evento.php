@@ -21,13 +21,13 @@ if( $SqlLink->query($query))
 	$mensaje="La inserción fue exitosa";
 else
 	$mensaje="La inserción fracasó";
-
-$query = "INSERT INTO Entradas (Eventos_Id,Estado) VALUES (".mysqli_insert_id($SqlLink).",'Libre');";
+$insertId= mysqli_insert_id($SqlLink);
+$query = "INSERT INTO Entradas (Eventos_Id,Estado,Nro) VALUES (".$insertId.",'Libre',0);";
 $Capacidad = CapacidadSala($Salas_Id);
 
 for( $i=0;$i<$Capacidad;$i++)
 		$SqlLink->query($query);
 
-echo $query;
+//echo $query;
 header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/eventos.php?mensaje=".$mensaje);
 ?>

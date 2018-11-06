@@ -8,9 +8,9 @@ $Ro = $SqlLink->query($ImpEntquery);
 //print_r($Ro);
 $ImpEntobj = $Ro->fetch_object()
 ?>
+Id: <?echo $obj->Entradas_Id;?><br>
 Evento: <?echo $ImpEntobj->NombreEvento;?><br>
 Descripcion: <?echo $ImpEntobj->DescripcionEvento;?><br>
-Sala: <?echo $ImpEntobj->DescripcionSala;?><br>
 Sala: <?echo $ImpEntobj->DescripcionSala;?><br>
 Fecha: <?echo $ImpEntobj->FechaEvento;?><br>
 Hora: <?echo $ImpEntobj->HoraEvento;?><br>
