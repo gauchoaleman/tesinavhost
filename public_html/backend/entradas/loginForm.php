@@ -23,7 +23,7 @@ if( isset($_POST["enviar"])){
 <body>
 
 <div class="container">
-<h3 class="text-muted">Entradas SEA - Login</h3>
+		<h3 class="text-muted">Entradas SEA - Login</h3>
 <?if( isset($mensaje))
 	echo $mensaje;?>
 <div class="row" >

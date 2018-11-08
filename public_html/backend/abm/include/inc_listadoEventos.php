@@ -137,8 +137,8 @@ $ResultArray = array();
 
 <div class="col-sm-1" align="center">
 
-<a onclick="return confirm('Seguro que quiere borrar el evento?')" href="eventos.php?accion=borrarEvento&Eventos_Id=<?echo $obj->Eventos_Id;?>">B</a>
-<a href="eventos.php?accion=modificarEvento&Eventos_Id=<?echo $obj->Eventos_Id;?>">M</a>
+<a onclick="return confirm('Seguro que quiere borrar el evento?')" href="eventos.php?accion=borrarEvento&Eventos_Id=<?echo $obj->Eventos_Id;?>"><img src="../img/borrar.png"></a>
+<a href="eventos.php?accion=modificarEvento&Eventos_Id=<?echo $obj->Eventos_Id;?>"><img src="../img/modificar.png"></a>
 
 
 </div>

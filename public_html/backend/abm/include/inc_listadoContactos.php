@@ -3,7 +3,7 @@
 $query = "SELECT * FROM Contactos ";
 if( isset($_GET["buscar"]) && $buscar=$_GET["buscar"])
 	$query .= " WHERE (nombre LIKE '%$buscar%' OR apellido LIKE '%$buscar%' OR email LIKE '%$buscar%') ";
-else if( isset($_GET["Contactos_Id"]) &&  $_GET["accion"] != "borrarContacto") 
+else if( isset($_GET["Contactos_Id"]) &&  $_GET["accion"] != "borrarContacto")
 		$query .= " WHERE Contactos_Id = ".$_GET["Contactos_Id"].";";
 	$ResultObject = mysqli_query($SqlLink,$query);
 	$ResultArray = array();
@@ -85,8 +85,8 @@ else if( isset($_GET["Contactos_Id"]) &&  $_GET["accion"] != "borrarContacto")
 </div>
 <div class="col-sm-1" align="center">
 
-<a onclick="return confirm('Seguro que quiere borrar el contacto?')" href="contactos.php?accion=borrarContacto&Contactos_Id=<?echo $obj->Contactos_Id;?>">B</a>
-<a href="contactos.php?accion=modificarContacto&Contactos_Id=<?echo $obj->Contactos_Id;?>">M</a>
+<a onclick="return confirm('Seguro que quiere borrar el contacto?')" href="contactos.php?accion=borrarContacto&Contactos_Id=<?echo $obj->Contactos_Id;?>"><img src="../img/borrar.png"></a>
+<a href="contactos.php?accion=modificarContacto&Contactos_Id=<?echo $obj->Contactos_Id;?>"><img src="../img/modificar.png"></a>
 
 
 </div>

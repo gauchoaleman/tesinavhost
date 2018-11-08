@@ -37,6 +37,12 @@ $ResultArray = array();
     Id
 </h5>
     </div>
+		<div class="col-sm-1" align="center" >
+		<h5>
+		Nro.
+		</h5>
+		</div>
+
     <div class="col-sm-2" align="center">
 
   <h5>Estado
@@ -66,7 +72,15 @@ $ResultArray = array();
     <?php echo $obj->Entradas_Id; ?>
 
 
-    </div>
+	</div>
+
+
+ <div class="col-sm-1" align="center">
+
+	 <?php echo $obj->Nro; ?>
+
+
+	 </div>
 	<div class="col-sm-2" align="center">
 <form name="form" method="POST" data-toggle="validator" action="include/inc_modificar_estado_entrada.php">
 <select name="Estado">
@@ -77,6 +91,7 @@ $ResultArray = array();
 </select>
 <button type="submit" class="btn btn-primary">Enviar</button>
 <input type="hidden" name="Entradas_Id" value="<?php echo $obj->Entradas_Id;?>">
+<input type="hidden" name="Eventos_Id" value="<?php echo $obj->Eventos_Id;?>">
 </form>
     </div>
 		<div class="col-sm-1" align="center">

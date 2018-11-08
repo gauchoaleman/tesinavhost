@@ -86,8 +86,8 @@ else if( isset($_GET["Administradores_Id"]) &&  $_GET["accion"] != "borrarAdmini
 </div>
 <div class="col-sm-1" align="center">
 
-<a onclick="return confirm('Seguro que quiere borrar el administrador?')" href="administradores.php?accion=borrarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>">B</a>
-<a href="administradores.php?accion=modificarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>">M</a>
+<a onclick="return confirm('Seguro que quiere borrar el administrador?')" href="administradores.php?accion=borrarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>"><img src="../img/borrar.png"></a>
+<a href="administradores.php?accion=modificarAdministrador&Administradores_Id=<?echo $obj->Administradores_Id;?>"><img src="../img/modificar.png"></a>
 
 
 </div>

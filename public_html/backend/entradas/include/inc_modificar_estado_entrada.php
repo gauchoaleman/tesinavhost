@@ -10,5 +10,4 @@ if( $SqlLink->query($query))
 else
 	$mensaje="La modificación fracasó";
 echo $query;
-header("Location: http://".$_SERVER['HTTP_HOST']."/backend/entradas/entradas.php?mensaje=".$mensaje);
- ?>
+header("Location: http://".$_SERVER['HTTP_HOST']."/backend/entradas/entradas.php?mensaje=$mensaje&Eventos_Id=$Eventos_Id");

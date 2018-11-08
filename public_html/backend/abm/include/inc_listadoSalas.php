@@ -129,8 +129,8 @@ Contacto
 </div>
 <div class="col-sm-1" align="center">
 
-<a onclick="return confirm('Seguro que quiere borrar la sala?')" href="salas.php?accion=borrarSala&Salas_Id=<?echo $obj->Salas_Id;?>">B</a>
-<a href="salas.php?accion=modificarSala&Salas_Id=<?echo $obj->Salas_Id;?>">M</a>
+<a onclick="return confirm('Seguro que quiere borrar la sala?')" href="salas.php?accion=borrarSala&Salas_Id=<?echo $obj->Salas_Id;?>"><img src="../img/borrar.png"></a>
+<a href="salas.php?accion=modificarSala&Salas_Id=<?echo $obj->Salas_Id;?>"><img src="../img/modificar.png"></a>
 
 
 </div>
