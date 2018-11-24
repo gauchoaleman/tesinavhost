@@ -29,7 +29,7 @@ if( isset($_GET["accion"]) )
 
   </body>
 </html>
-<?php /*
+<?php
 function tryLogin($Data){
 	global $SqlLink;
 
@@ -39,10 +39,11 @@ function tryLogin($Data){
 	$resultObject = mysqli_query($SqlLink,$query);
 	$obj = $resultObject->fetch_object();
 	if( $resultObject->num_rows >0){
+    session_start();
 		$_SESSION["loginId"] = $obj->idUsuario;
 		return true;
 	}
 	else
 		return false;
 }
-*/ ?>
+ ?>

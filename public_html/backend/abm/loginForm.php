@@ -2,12 +2,10 @@
 require_once "../../include/inc_connectdb.php";
 
 if( isset($_POST["enviar"])){
-	//echo "en el if";
+
 	if (tryLogin($_POST)){
-		//echo "Login exitoso";
-		//echo "Location: http://".$_SERVER['HTTP_HOST']."/index.php";
 
-
+		//echo "Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/index.php";
 		header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/index.php");
 	}
 	else $mensaje="Login no exitoso.";
@@ -24,7 +22,7 @@ if( isset($_POST["enviar"])){
 
 <div class="container">
 <h3 class="text-muted">ABM SEA - Login</h3>
-<?if( isset($mensaje))
+<? if( isset($mensaje))
 	echo $mensaje;?>
 <div class="row" >
     <div class="col-sm-3" >
