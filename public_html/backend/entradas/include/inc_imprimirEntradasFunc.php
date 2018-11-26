@@ -1,5 +1,8 @@
 <?php
+$IPServidor="192.168.1.29";
+
 function imprimirEntrada($Entradas_Id){
+  global $IPServidor;
   global $SqlLink;
 //  $content = "<table style='height:100px; border=1; cellpadding='0; cellspacing=0; width=300px;'>";
 //  $content .= "<tr style='height:100px;'><td style='height:100px; vertical-align: middle; width:300px;' >";
@@ -28,7 +31,7 @@ function imprimirEntrada($Entradas_Id){
   $content .= "Hora: $Hora<br>";
 
   $content .= "</td><td width='200'align='center'>";
-  $content .= "<qrcode value='ID entrada: $Entradas_Id' ec='H' style='width: 50mm; background-color: white; color: black;''></qrcode>";
+  $content .= "<qrcode value='http://$IPServidor/backend/entradas/procEntrada.php?Entradas_Id=$Entradas_Id' ec='H' style='width: 50mm; background-color: white; color: black;''></qrcode>";
   $content .= "</td></tr>";
   $content .= "</table><br>";
   //echo $content;
