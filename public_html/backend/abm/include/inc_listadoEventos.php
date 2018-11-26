@@ -132,7 +132,7 @@ $ResultArray = array();
 		</div>
 
 		<div class="col-sm-1" align="center">
-			<a href="/backend/entradas/entradas.php?accion=listadoEntradas&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Ver</a>
+			<a href="../entradas/entradas.php?accion=listadoEntradas&Eventos_Id=<?php echo $obj->Eventos_Id; ?>">Ver</a>
 		</div>
 
 <div class="col-sm-1" align="center">
