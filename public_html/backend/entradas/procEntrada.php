@@ -53,7 +53,7 @@ function cambiarNombreCompradorEntrada($Entradas_Id,$NombreComprador){
           }
             break;
         case "Vendida":
-        if( isset($_POST["NombreOk"])){
+        elseif( isset($_POST["NombreOk"])){
           cambiarEstadoEntrada($Entradas_Id,"Ingresado");
           echo "Espectador puede ingresar al recinto";
         }
@@ -67,6 +67,7 @@ function cambiarNombreCompradorEntrada($Entradas_Id,$NombreComprador){
           break;
         case "Invalida":
           echo "La entrada es invalida";
+          break;
         default:
           break;
         }
