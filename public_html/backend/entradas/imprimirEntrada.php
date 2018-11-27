@@ -9,7 +9,7 @@ $ImpEntquery = "SELECT ent.Nro as Nro,s.Calle as SalaCalle,s.AlturaCalle as Sala
 $Ro = $SqlLink->query($ImpEntquery);
 //echo $ImpEntquery;
 //print_r($Ro);
-$ImpEntobj = $Ro->fetch_object()
+$ImpEntobj = $Ro->fetch_object();
 
 $EntradasId=$obj->Entradas_Id;
 $Nro=$obj->Nro;
