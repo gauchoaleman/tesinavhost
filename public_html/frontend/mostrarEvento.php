@@ -9,7 +9,7 @@
 
 <?
 extract($_GET);
-echo "<table border=1 width='400'><tr><td>";
+echo "<table border=1 width='850'><tr><td>";
 
 $ImpEntquery = "SELECT ent.Nro as Nro,s.Calle as SalaCalle,s.AlturaCalle as SalaAlturaCalle,";
 $ImpEntquery .= "e.Fecha as FechaEvento,e.Hora as HoraEvento,e.Nombre as NombreEvento,";
