@@ -1,5 +1,5 @@
 <?php
-$IPServidor="192.168.1.29";
+$IPServidor="192.168.0.17";
 
 function imprimirEntrada($Entradas_Id){
   global $IPServidor;

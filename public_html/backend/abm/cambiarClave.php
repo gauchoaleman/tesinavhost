@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "../../include/inc_connectdb.php";
 
 if( isset($_POST["enviar"])){

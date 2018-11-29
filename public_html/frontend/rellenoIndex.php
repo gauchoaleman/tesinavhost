@@ -1,4 +1,7 @@
 <?php
 require_once "../include/inc_connectdb.php";
-include "include/inc_listaEventos.php";
+if( isset($_GET['Eventos_Id']))
+  include "include/inc_mostrarEvento.php";
+else
+  include "include/inc_listaEventos.php";
 ?>

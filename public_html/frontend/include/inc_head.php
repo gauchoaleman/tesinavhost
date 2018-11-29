@@ -5,8 +5,8 @@ Código del head que se incluye en todas las páginas
 */
 require_once "../include/inc_connectdb.php";
 
-//if (!isset($_SESSION["loginId"]))
-//	header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/loginForm.php");
+if (!isset($_SESSION["loginId"]))
+	header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/loginForm.php");
 ?>
 <head>
 

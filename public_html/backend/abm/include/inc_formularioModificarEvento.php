@@ -7,7 +7,8 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 	 <div>
 	 Todos los campos son obligatorios<br>
 
-	 	 <form name="form" method="POST" data-toggle="validator" action="include/inc_modificar_evento.php">
+	 	 <form enctype="multipart/form-data" action="__URL__" method="POST" name="form" action="include/inc_modificar_evento.php">
+		 <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 	 	<div class="row">
 	  <div class="col-sm-3">
 	 	 <div class="form-group">

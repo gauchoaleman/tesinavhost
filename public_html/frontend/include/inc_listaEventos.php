@@ -14,7 +14,7 @@ $Ro = $SqlLink->query($ListaEventosquery);
     $Hora=date("H:i",strtotime($ListaEventosobj->HoraEvento));
     $Direccion = $ListaEventosobj->SalaCalle." ".$ListaEventosobj->SalaAlturaCalle;
     echo "<tr><td width='600'>";
-    echo "<a href='mostrarEvento.php?Eventos_Id=$Eventos_Id'>$Evento</a> / ";
+    echo "<a href='index.php?Eventos_Id=$Eventos_Id'>$Evento</a> / ";
     //  echo $ListaEventosobj->DescripcionEvento;
 
     echo "Sala: $DescripcionSala / ";

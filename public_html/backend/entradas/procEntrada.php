@@ -53,7 +53,7 @@ function cambiarNombreCompradorEntrada($Entradas_Id,$NombreComprador){
           }
             break;
         case "Vendida":
-        elseif( isset($_POST["NombreOk"])){
+        if( isset($_POST["NombreOk"])){
           cambiarEstadoEntrada($Entradas_Id,"Ingresado");
           echo "Espectador puede ingresar al recinto";
         }
