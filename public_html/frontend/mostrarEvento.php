@@ -28,7 +28,7 @@ $Fecha = date("j/m/Y",strtotime($obj->FechaEvento));
 $Hora=date("H:i",strtotime($obj->HoraEvento));
 $Direccion = $obj->SalaCalle." ".$obj->SalaAlturaCalle;
 
-echo "<b>$Evento</b><br>";
+echo "<h2>$Evento</h2><br>";
 echo "$DescripcionEvento<br>";
 
 echo "Sala: $DescripcionSala<br>";

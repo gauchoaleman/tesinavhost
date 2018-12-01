@@ -5,33 +5,33 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 ?>
 	 <!-- Formulario -->
 	 <div>
-	 Todos los campos son obligatorios<br>
+	 LOs campos marcados con * son obligatorios<br>
 
-	 	 <form enctype="multipart/form-data" action="__URL__" method="POST" name="form" action="include/inc_modificar_evento.php">
-		 <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+	 	 <form enctype="multipart/form-data" method="POST" name="form" action="include/inc_modificar_evento.php">
+		 <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
 	 	<div class="row">
 	  <div class="col-sm-3">
 	 	 <div class="form-group">
-	  <label for="exampleInputPassword1">Nombre </label>
+	  <label for="exampleInputPassword1">Nombre *</label>
 	  <input type="text" name="Nombre" value="<? echo $datosObj->Nombre;?>" required  class="form-control">
 	 </div>
 	  </div>
 	  <div class="col-sm-5">
 	 	<div class="form-group">
-	  <label for="exampleInputPassword1">Descripcion </label>
+	  <label for="exampleInputPassword1">Descripcion *</label>
 	  <textarea required name="Descripcion" class="form-control"><?php echo $datosObj->Descripcion; ?></textarea>
 	 </div>
 	  </div>
 	  <div class="col-sm-1">
 	 	 <div class="form-group">
-	  <label for="exampleInputPassword1">Costo </label>
+	  <label for="exampleInputPassword1">Costo *</label>
 	  <input name="Costo" required type="text" value="<? echo $datosObj->Costo;?>" class="form-control">
 	 </div>
  </div></div>
 		 <div class="row">
 	  <div class="col-sm-3">
 	 	 <div class="form-group">
-	  <label for="exampleInputPassword1">Fecha/Hora </label>
+	  <label for="exampleInputPassword1">Fecha/Hora *	</label>
 		<div>
 
         <input type="datetime-local" name="FechaHora" value="<? echo $datosObj->Fecha."T".$datosObj->Hora; ?>"
@@ -49,6 +49,32 @@ $datosObj = $resultObjectDatosCliente->fetch_object();
 <div class="form-group">
 <? include "include/inc_selectorAdministradores.php";?>
 </div></div></div>
+
+<div class="row">
+<div class="col-sm-3">
+ <div class="form-group">
+	 <label for="exampleInputPassword1">Facebook</label>
+<input name="LinkFacebook" type="text"  value="<?php echo $datosObj->LinkFacebook; ?>" class="form-control">
+</div></div>
+
+<div class="col-sm-3">
+ <div class="form-group">
+	 <label for="exampleInputPassword1">Twitter</label>
+<input name="LinkTwitter" type="text" value="<?php echo $datosObj->LinkTwitter; ?>" class="form-control">
+</div></div>
+
+<div class="col-sm-3">
+ <div class="form-group">
+	 <label for="exampleInputPassword1">Instagram</label>
+<input name="LinkInstagram" type="text" value="<?php echo $datosObj->LinkInstagram; ?>" class="form-control">
+</div></div>
+
+<div class="col-sm-3">
+ <div class="form-group">
+	 <label for="exampleInputPassword1">Imagen</label>
+	 <input type="file" name="Imagen">
+</div></div>
+
  <div class="row">
  <div class="col-sm-2">
 	<div class="form-group">

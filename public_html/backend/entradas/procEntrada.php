@@ -53,17 +53,17 @@ function cambiarNombreCompradorEntrada($Entradas_Id,$NombreComprador){
           }
             break;
         case "Vendida":
-        if( isset($_POST["NombreOk"])){
-          cambiarEstadoEntrada($Entradas_Id,"Ingresado");
-          echo "Espectador puede ingresar al recinto";
-        }
-        elseif(isset($_POST["NombreMal"] )){
-          cambiarEstadoEntrada($Entradas_Id,"Invalida");
-          echo "Entrada no valida";
-        }
-        else{
-          include "include/inc_formularioConfirmarNombre.php";
-        }
+          if( isset($_POST["NombreOk"])){
+            cambiarEstadoEntrada($Entradas_Id,"Ingresado");
+            echo "Espectador puede ingresar al recinto";
+          }
+          elseif(isset($_POST["NombreMal"] )){
+            cambiarEstadoEntrada($Entradas_Id,"Invalida");
+            echo "Entrada no valida";
+          }
+          else{
+            include "include/inc_formularioConfirmarNombre.php";
+          }
           break;
         case "Invalida":
           echo "La entrada es invalida";

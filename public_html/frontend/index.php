@@ -61,20 +61,6 @@
     </div>
 </div>
 
-<div class="container">
-  <br>
-    <nav>
-      <ul class="pagination pagination-lg">
-        <li><a href="#">&laquo;</a></li>
-        <li class="disable"><a href="#">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
-        <li><a href="">4</a></li>
-        <li><a href="">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-      </ul>
-    </nav>
-</div>
 
 <footer class="page-footer center-on-small-only unique-color-dark pt-0">
 
@@ -85,8 +71,7 @@
             <!--First column-->
             <div class="col-md-3 col-lg-4 col-xl-3 mb-r">
                 <h3 class="title font-bold"><strong>Sea Produccion y cultural</strong></h3>
-                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                    amet, consectetur adipisicing elit.</p>
+                <p>Cultura online</p>
             </div>
 
             <div class="col-md-1 col-lg-4 col-xl-1 mx-auto mb-r">

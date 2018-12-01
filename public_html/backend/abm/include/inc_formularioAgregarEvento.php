@@ -2,7 +2,7 @@
 	 <div>
 	 Todos los campos marcados con * son obligatorios<br>
 
-	 	 <form name="form" method="POST" data-toggle="validator" action="include/inc_Evento.php">
+	 	 <form name="form" enctype="multipart/form-data" method="POST" data-toggle="validator" action="include/inc_Evento.php">
 	 	<div class="row">
 	  <div class="col-sm-3">
 	 	 <div class="form-group">

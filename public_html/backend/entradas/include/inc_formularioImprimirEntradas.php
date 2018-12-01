@@ -10,10 +10,11 @@
 <div class="row">
   <div class="col-sm-4">
    <div class="form-group">
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" class="btn btn-primary" >Enviar</button>
 </div>
 </div>
   <input type="hidden" name="Eventos_Id" class="form-control" value="<? echo $_GET['Eventos_Id'];?>">
 </form>
 </div>
+<a href="/backend/">Volver al ABM</a>
 </div>

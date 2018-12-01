@@ -12,10 +12,8 @@ function CapacidadSala($Salas_Id){
 
 extract($_POST);
 list($Year,$Month,$Day,$Hour,$Minute) = sscanf($FechaHora,'%d-%d-%dT%d:%d');
-$query = "INSERT INTO Eventos (Nombre,Descripcion,Costo,Fecha,Hora,Administradores_Id,Salas_Id) ";
-$query .= "VALUES ('".$Nombre."','".$Descripcion."','".$Costo."','$Year-$Month-$Day','$Hour:$Minute',$Administradores_Id,$Salas_Id);";
-
-
+$query = "INSERT INTO Eventos (Nombre,Descripcion,Costo,Fecha,Hora,Administradores_Id,Salas_Id,LinkFacebook,LinkTwitter,LinkInstagram) ";
+$query .= "VALUES ('".$Nombre."','".$Descripcion."','".$Costo."','$Year-$Month-$Day','$Hour:$Minute',$Administradores_Id,$Salas_Id,'$LinkFacebook','$LinkTwitter','$LinkInstagram');";
 
 if( $SqlLink->query($query))
 	$mensaje="La inserción fue exitosa";
@@ -30,5 +28,6 @@ for( $nro=1;$nro<=$Capacidad;$nro++){
 	$SqlLink->query($query);
 }
 //echo $query;
+
 header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/eventos.php?mensaje=".$mensaje);
 ?>

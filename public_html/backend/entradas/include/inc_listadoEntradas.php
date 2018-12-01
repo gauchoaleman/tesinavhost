@@ -4,11 +4,9 @@
 
 }*/
 ?>
-
-
 <?if( isset($_GET["Eventos_Id"])){
 		extract($_GET);
-		echo "<br><a href='imprimirEntradas.php?Eventos_Id=$Eventos_Id' target='_blank'>Imprimir entradas</a>";
+		echo "<br><a href='imprimirEntradas.php?Eventos_Id=$Eventos_Id' target='_self'>Imprimir entradas</a>";
 }
 	?>
 

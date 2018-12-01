@@ -8,7 +8,7 @@ if( isset($_POST["ctdEntradas"]) ){
   $content = "<page>";
   extract($_POST);
   extract($_GET);
-  $query = "SELECT * FROM Entradas WHERE Estado='Libre' AND Eventos_Id=$Eventos_Id LIMIT $ctdEntradas;";
+  $query = "SELECT * FROM Entradas WHERE (Estado='Libre' OR Estado='Devuelta') AND Eventos_Id=$Eventos_Id LIMIT $ctdEntradas;";
 
   $ResultObject = $SqlLink->query($query);
 
@@ -20,7 +20,8 @@ if( isset($_POST["ctdEntradas"]) ){
 $content .= "</page>";
 $html2pdf = new \Spipu\Html2Pdf\Html2Pdf;
 $html2pdf->writeHTML($content);
-$html2pdf->output();
+$html2pdf->output('entradas.pdf','D');
+//header("Location: http://".$_SERVER['HTTP_HOST']."/backend/abm/index.php?mensaje=Impresion de entradas exitosa");
 }
 else{?>
   <!DOCTYPE html>
@@ -42,28 +43,3 @@ else{?>
   </html>
   <?
 }  ?>
-
-
-<?php
-if( !$_POST ){
-
-}
-else{
-  $content = "<page>";
-  extract($_POST);
-  extract($_GET);
-  $query = "SELECT * FROM Entradas WHERE Estado='Libre' AND Eventos_Id=$Eventos_Id LIMIT $ctdEntradas;";
-
-  $ResultObject = $SqlLink->query($query);
-
-  while($obj = $ResultObject->fetch_object()) {
-    $Updatequery = "UPDATE Entradas SET Estado='Impresa' WHERE Entradas_Id=".$obj->Entradas_Id.";";
-    $SqlLink->query($Updatequery);
-    $content .= imprimirEntrada($obj->Entradas_Id);
-}
-$content .= "</page>";
-$html2pdf = new \Spipu\Html2Pdf\Html2Pdf;
-$html2pdf->writeHTML($content);
-$html2pdf->output('entradas.pdf', 'D');
-}
-?>
